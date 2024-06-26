@@ -34,6 +34,7 @@ li {
 
 section {
     background-color: rgb(253, 249, 244);
+    transition: all 300ms ease;
 }
 
 p {
@@ -63,6 +64,21 @@ button {
 }
 .click:active {
     transform: scale(0.8);
+}
+
+nav, 
+.scroll, 
+.header {
+    opacity: 1;
+    visibility: visible;
+    transition: all 600ms 800ms;
+}
+.modal--open nav, 
+.modal--open .scroll, 
+.modal--open .header {
+    opacity: 0;
+    visibility: hidden;
+    transition: all 400ms;
 }
 
 /* NAV */
@@ -123,6 +139,40 @@ nav {
     width: 100%;
 }
 
+.dark-theme .title, 
+.dark-theme .section__title, 
+.dark-theme .section__sub-title, 
+.dark-theme .nav__link--anchor, 
+.dark-theme .fa-adjust, 
+.dark-theme .header__para 
+{
+    color: rgb(188, 250, 250);
+} 
+
+.dark-theme section {
+    background-color: #242424;
+}
+
+.dark-theme .scroll__icon {
+    border-color: white;
+}
+.dark-theme .scroll__icon:after {
+    background-color: white;
+}
+
+.dark-theme .link__hover--effect--black:after,
+.dark-theme .mail__btn {
+    background-color: #872BCB;
+}
+.footer-link__hover--effect--black:after {
+    background-color: #872BCB;
+}
+
+
+
+.dark-theme .social__link {
+    color: #242424;
+}
 /* Landing */
 
 .header {
@@ -139,21 +189,29 @@ nav {
     font-size: 120px;
     margin-bottom: 12px;
     text-align: left;
-    line-height: 1.2;
+    line-height: 1.1;
+    color: #242424;
 }
 
 .accent {
-    color: #EFB679;
+    color: #EFB679 !important;
+}
+
+b {
+    font-family: "Fraunces";
+    font-weight: 600;
 }
 
 .header__para {
+    font-family: "fraunces";
     font-size: 24px;
     line-height: 1.75;
-    max-width: 500px;
+    max-width: 520px;
+    color: #242424;
 }
 
 .social__list {
-    margin-top: 16px;
+    margin-top: 24px;
     display: flex;
 }
 
@@ -221,6 +279,12 @@ nav {
 
 /* Modal */
 
+.modal--open .modal {
+    z-index: 6;
+    box-shadow: 0 20px 80px 0  rgb(0, 0, 0, 0.45);
+    visibility: visible;
+}
+
 .modal {
     position: absolute;
     top: 50%;
@@ -229,11 +293,13 @@ nav {
     max-width: 1100px;
     height: 700px;
     transform: translate(-50%, -50%);
-    box-shadow: 0 20px 80px 0 #969696;
+    
     border-radius: 20px;
     overflow: hidden;
     display: flex;
-    
+    visibility: hidden;
+    transition: visibility 1s, z-index 1s, box-shadow 0.5s ease;
+    z-index: -1;
 }
 
 .modal__half {
@@ -243,12 +309,18 @@ nav {
     flex-direction: column;
     justify-content: center;
     position: relative;
+    transition: all 300ms ease-in;
+}
+
+.modal--open .modal__about,
+.modal--open .modal__contact {
+    transform: translateX(0%);
 }
 
 .modal__about {
     background-color: white;
     color: rgb(78, 51, 136);
-    
+    transform: translateX(-110%);
 }
 
 .modal__languages {
@@ -299,12 +371,13 @@ nav {
     margin: 16px 0;
     font-size: 14px;
     line-height: 1.75;
+    font-family: "Fraunces";
 }
 
 .modal__contact {
     background-color: #EFB679;
     color: rgb(78, 51, 136);
-
+    transform: translateX(110%);
 }
 
 input, textarea {
@@ -322,6 +395,7 @@ input, textarea {
 
 input:hover, textarea:hover {
     border-color: #872BCB;
+    background-color: #f8c894;
 }
 
 input:focus, textarea:focus {
@@ -372,9 +446,10 @@ label {
     left: 0;
     width: 100%;
     height: 100%;
-    display: flex;
+    display: none;
     align-items: center;
     justify-content: center;
+    z-index: -1;
 }
 
 .modal__overlay--loading {
@@ -382,7 +457,12 @@ label {
     background: -webkit-linear-gradient(-90deg, rgb(78, 51, 136) 0%, #872BCB 34%, #EFB679);
     color: white;
     font-size: 80px;
-    z-index: -1;
+    
+}
+
+.modal__overlay--visible {
+    z-index: 1;
+    display: flex;
 }
 
 .modal__overlay--success {
@@ -441,7 +521,7 @@ label {
 .project__wrapper {
     position: relative;
     border-radius: 20px;
-    box-shadow: 0 10px 40px 0 #969696;
+    box-shadow: 0 10px 40px 0 rgb(0, 0, 0, 0.45);
     overflow: hidden;
 }
 
@@ -504,9 +584,11 @@ label {
 /* Footer */
 
 footer {
+    position: relative;
     background-color: #242424;
     display: flex;
     padding: 5% 0;
+    z-index: 10;
 }
 
 .footer-row {
@@ -519,10 +601,13 @@ footer {
     width: 70px;
 }
 
-.footer__social--link,
-.footer__copyright {
-    color: white;
+.footer__social--link {
+    color: rgb(188, 250, 250);
     font-family: "Fraunces";
+    font-weight: 300;
+}
+.footer__copyright {
+    color: rgb(253, 249, 244);
     font-weight: 300;
 }
 
@@ -531,5 +616,50 @@ footer {
     max-width: 500px;
     display: flex;
     justify-content: space-around;
-    margin: 28px 0;
+    margin: 32px 0;
+}
+
+/* Shapes */
+
+.shape {
+    max-width: 100px;
+    max-height: 100px;
+    position: fixed;
+    z-index: 0;
+}
+.shape--0 {
+    top: 15vh;
+    left: 5vw;
+}
+.shape--1 {
+    top: 15vh;
+    left: 50vw;
+}
+.shape--2 {
+    top: 15vh;
+    left: 80vw;
+}
+.shape--3 {
+    top: 50vh;
+    left: 2vw;
+}
+.shape--4 {
+    top: 55vh;
+    left: 60vw;
+}
+.shape--5 {
+    top: 50vh;
+    left: 80vw;
+}
+.shape--6 {
+    top: 80vh;
+    left: 5vw;
+}
+.shape--7 {
+    top: 80vh;
+    left: 50vw;
+}
+.shape--8 {
+    top: 80vh;
+    left: 80vw;
 }

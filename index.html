@@ -75,6 +75,73 @@
             <div class="scroll__icon click">
             </div>
         </a>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me:</h3>
+                <h4 class="modal__subheading modal__subheading--about">Graphic Designer, Illustrator, Frontend Web Developer</h4>
+                <p class="modal__para">Hello! I'm an artist and love finding ways to bring brands to life through <b class="accent">creative solutions.</b> I have a passion for developing <b class="accent">beautiful websites</b> with thoughtful <b class="accent">user experiences.</b><br><br>I'm currently living in the Southwest United States and get out into nature as often as I can to enjoy the beautiful mountains and desert. </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img src="./assets/317755_badge_html_html5_achievement_award_icon.png" class="modal__language--img">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/317756_badge_css_css3_achievement_award_icon.png" class="modal__language--img">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/652581_code_command_develop_javascript_language_icon.png" class="modal__language--img">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/2925245_figma_square_design_graphic_tool_icon.png" class="modal__language--img">
+                        <span class="language__name">Figma</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/4373061_adobe_logo_logos_xd_icon.png" class="modal__language--img">
+                        <span class="language__name">Adobe Xd</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/289510_adobe_design_photoshop_photoshop logo_software icon_icon.png" class="modal__language--img">
+                        <span class="language__name">Adobe Photoshop</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/289508_adobe_design_file format_indesign_icon.png" class="modal__language--img">
+                        <span class="language__name">Adobe Indesign</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/289507_adobe_design_illustrator_illustrator logo_software icon_icon.png" class="modal__language--img">
+                        <span class="language__name">Adobe Illustrator</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <h3 class="modal__title modal__title--contact">Contact</h3>
+                <h4 class="modal__subheading modal__subheading--contact">Let's get in touch!</h4>
+                <form id="contact__form" action="">
+                    <div class="form__item">
+                        <label class="form__item--label" for="name">Name</label>
+                        <input class="input" name="user_name" type="text" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label" for="email">Email</label>
+                        <input class="input" name="user_email" type="email" required></input>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label" for="message">Message</label>
+                        <textarea class="input" name="message" type="text" required></textarea>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send me a note <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+                <div class="modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div> 
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message!
+                </div>
+            </div>
+            <i class="fas fa-times click"></i>
+        </div>
     </section>
     <section id="projects">
         <div class="container">

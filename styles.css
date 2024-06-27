@@ -144,7 +144,9 @@ nav {
 .dark-theme .section__sub-title, 
 .dark-theme .nav__link--anchor, 
 .dark-theme .fa-adjust, 
-.dark-theme .header__para 
+.dark-theme .header__para,
+.dark-theme .gd__section__title,
+.dark-theme .gd__section__details 
 {
     color: rgb(188, 250, 250);
 } 
@@ -166,6 +168,11 @@ nav {
 }
 .footer-link__hover--effect--black:after {
     background-color: #872BCB;
+}
+
+.dark-theme .gd__content--description,
+.dark-theme .gd__section__sub-title {
+    color: white;
 }
 
 
@@ -242,6 +249,7 @@ b {
     right: 40px;
     position: fixed;
     z-index: 100;
+    box-shadow: 0 12px 30px 0 rgb(0, 0, 0, 0.2);
 }
 
 .scroll__icon {
@@ -306,10 +314,9 @@ b {
 
 .modal__half {
     width: 50%;
-    padding: 40px 72px;
+    padding: 80px 72px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     position: relative;
     transition: all 300ms ease-in;
 }
@@ -393,11 +400,13 @@ input, textarea {
     border-right: none;
     height: 40px;
     transition: all 300ms ease;
+    padding: 4px;
 }
 
 input:hover, textarea:hover {
     border-color: #872BCB;
     background-color: #f8c894;
+    
 }
 
 input:focus, textarea:focus {
@@ -408,6 +417,7 @@ textarea {
     resize: vertical;
     height: 100px;
     margin-top: 16px;
+    padding: 4px;
 }
 
 label {
@@ -545,7 +555,6 @@ label {
     max-width: 550px;
     opacity: 0;
     transition: all 400ms ease;
-    
 }
 
 
@@ -576,10 +585,12 @@ label {
 
 .project__description--languages {
     font-size: 20px;
+    font-weight: 600;
+    letter-spacing: .05em;
 }
 
 .project__description--para {
-    margin: 8px 0;
+    margin: 8px 0 16px 0;
 }
 
 .project__description--link {
@@ -732,4 +743,64 @@ footer {
     .modal__half {
         padding: 40px;
     }
+}
+
+
+
+/* Graphic Design Projects */
+
+.gd__header-img {
+    width: 100%;
+    max-width: 1200px;
+    display: flex;
+}
+
+.gd__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.gd__section__details { 
+    margin: 24px 0;
+    font-weight: 400;
+    text-transform: uppercase;
+    color: #6f6f6f;
+}
+
+.gd__section__title {
+    font-size: 40px;
+}
+
+.gd__section__sub-title {
+    margin: 24px 0 16px 0;
+    font-family: "Fraunces";
+    font-weight: 600;
+}
+
+.gd__content--description {
+    font-family: "fraunces";
+    max-width: 600px;
+    margin-top: 8px;
+}
+
+.gd__content-row{
+    display: flex;
+    flex-direction: row;
+    margin: 32px 0;
+    
+}
+
+.gd__content-row-img {
+    display: flex;
+    justify-content: space-between;
+    width: calc(50% - 8px);
+    height: auto;
+    margin-right: 8px;
+    flex-shrink: 0;
+    overflow: hidden;
+}
+
+.gd__content-img {
+    width: 100%;
 }

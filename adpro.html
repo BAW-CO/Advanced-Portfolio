@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Adventure Pro Magazine</title>
+    <link rel="stylesheet" href="./styles.css">
+    <script src="https://kit.fontawesome.com/3577bc11c6.js" crossorigin="anonymous"></script>
+    <script src="app.js" defer></script>
+    <script type="text/javascript"
+        src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js">
+    </script>
+    <script type="text/javascript">
+    (function(){
+        emailjs.init({
+            publicKey: "nW_C-v4ccLjeQBdyK",
+        });
+    })();
+    </script>
+</head>
+<body>
+    <section id="landing-page">
+        <nav>
+            <a href="./index.html" class="nav__anchor">
+                <figure>
+                    <img id="bw-logo" src="./assets/BWLogo.png" alt="">
+                </figure>
+            </a>
+            <ul class="nav__link--list">
+                <li class="nav__link click" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover--effect--black
+                    ">About</a>
+                </li>
+                <li class="nav__link click">
+                    <a href="./index.html#projects" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover--effect--black
+                    ">Projects</a>
+                </li>
+                <li class="nav__link click" onclick="toggleModal()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover--effect--black
+                    ">Contact</a>
+                </li>
+                <li class="nav__link click" onclick="toggleContrast()">
+                    <a href="#" class="
+                    nav__link--anchor
+                    link__hover-effect
+                    link__hover--effect--black
+                    "><i class="fa-solid fa-wand-magic-sparkles"></i></a>
+                </li>
+            </ul>
+        </nav>
+        <button class="mail__btn click" onclick="toggleModal()">
+            <i class="fa-solid fa-envelope"></i>
+        </button>
+        <div class="modal">
+            <div class="modal__half modal__about">
+                <h3 class="modal__title modal__title--about">Here's a bit about me:</h3>
+                <h4 class="modal__subheading modal__subheading--about">Graphic Designer, Illustrator, Frontend Web Developer</h4>
+                <p class="modal__para">Hello! I'm an artist and love finding ways to bring brands to life through <b class="accent">creative solutions.</b> I have a passion for developing <b class="accent">beautiful websites</b> with thoughtful <b class="accent">user experiences.</b><br><br>I'm currently living in the Southwest United States and get out into nature as often as I can to enjoy the beautiful mountains and desert. </p>
+                <div class="modal__languages">
+                    <figure class="modal__language">
+                        <img src="./assets/317755_badge_html_html5_achievement_award_icon.png" class="modal__language--img">
+                        <span class="language__name">HTML</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/317756_badge_css_css3_achievement_award_icon.png" class="modal__language--img">
+                        <span class="language__name">CSS</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/652581_code_command_develop_javascript_language_icon.png" class="modal__language--img">
+                        <span class="language__name">JavaScript</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/2925245_figma_square_design_graphic_tool_icon.png" class="modal__language--img">
+                        <span class="language__name">Figma</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/4373061_adobe_logo_logos_xd_icon.png" class="modal__language--img">
+                        <span class="language__name">Adobe Xd</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/289510_adobe_design_photoshop_photoshop logo_software icon_icon.png" class="modal__language--img">
+                        <span class="language__name">Adobe Photoshop</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/289508_adobe_design_file format_indesign_icon.png" class="modal__language--img">
+                        <span class="language__name">Adobe Indesign</span>
+                    </figure>
+                    <figure class="modal__language">
+                        <img src="./assets/289507_adobe_design_illustrator_illustrator logo_software icon_icon.png" class="modal__language--img">
+                        <span class="language__name">Adobe Illustrator</span>
+                    </figure>
+                </div>
+            </div>
+            <div class="modal__half modal__contact">
+                <i class="fas fa-times click" onclick="toggleModal()"></i>
+                <h3 class="modal__title modal__title--contact">Contact</h3>
+                <h4 class="modal__subheading modal__subheading--contact">Let's get in touch!</h4>
+                <form id="contact__form" onsubmit="contact(event)">
+                    <div class="form__item">
+                        <label class="form__item--label">Name
+                        <input class="input" name="user_name" type="text" required></input></label>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Email
+                        <input class="input" name="user_email" type="email" required></input></label>
+                    </div>
+                    <div class="form__item">
+                        <label class="form__item--label">Message
+                        <textarea class="input" name="message" type="text" required></textarea></label>
+                    </div>
+                    <button id="contact__submit" class="form__submit">Send me a note <i class="fa-solid fa-paper-plane"></i></button>
+                </form>
+                <div class="modal__overlay modal__overlay--loading">
+                    <i class="fas fa-spinner"></i>
+                </div> 
+                <div class="modal__overlay modal__overlay--success">
+                    Thanks for the message!
+                </div>
+            </div>
+        </div>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <img src="./assets/GD assets/adprocover copy.jpg" class="gd__header-img" alt="">
+            <div class="gd__content">
+                <h2 class="gd__section__sub-title">Lead Designer</h2>
+                <h1 class="gd__section__title">Adventure Pro Magazine</h1>
+                <h3 class="gd__section__details">Branding | Page Layout | Photo Editing | Ad Design | Print Strategy</h3>
+                <p class="gd__content--description">As Lead designer at AdPro I looked forward to an edition every season.
+                        <br><br>
+                    Adventurers would write in with their stories and photos from their trips and I worked with their content and our editor to produce this magazine from start to finish. Our mission was to showcase the natural beauty of the four corners region through every season, tell the tales of our local legends, keep readers informed of environmental issues and policies that effected them, and show that everyone can be an adventurer (not just the pros.)
+                        <br><br>
+                    My role here included progressing the AdPro brand guidelines, laying out the publication for print, designing the ads and graphics for each page, photo editing, file management, collaborating with writers and my editor to meet page counts, working with our ad sales team to meet goals for our sponsors, generating social media and digital ads, and communicating with our printer to ensure a successful hand off. </p>
+            </div>
+            <div class="gd__content-row">
+                <img src="./assets/GD assets/adprocover.png" class="gd__content-row-img">
+                <img src="./assets/GD assets/adprocover2.png" class="gd__content-row-img">
+            </div>
+            <img src="./assets/GD assets/afloat.png" class="gd__content-img">
+            <div class="gd__content-row">
+                <img src="./assets/GD assets/AdventureProSpring2021 NEW17.jpg" class="gd__content-row-img">
+                <img src="./assets/GD assets/AdventureProSpring2021 NEW18.jpg" class="gd__content-row-img">
+            </div>
+            <img src="./assets/GD assets/surfsup.png" class="gd__content-img">
+            <div class="gd__content-row">
+                <img src="./assets/GD assets/AdventureProSpring2021 NEW24.jpg" class="gd__content-row-img">
+                <img src="./assets/GD assets/AdventureProSpring2021 NEW23.jpg" class="gd__content-row-img">
+            </div>
+           
+            <img src="" class="gd__content-img">
+            <img src="./assets/GD assets/adpro2.gif" class="gd__content-img">
+            
+            
+        </div>
+    </div>
+
+
+
+    <footer>
+        <div class="container">
+            <div class="row footer-row">
+                <figure>
+                    <a href="./index.html" class="footer__anchor">
+                        <img class="footer__logo--img" src="./assets/BWLogo.png" alt="">
+                    </a>
+                </figure>
+                <div class="footer__social--list">
+                    <a href="https://linkedin.com/in/bridget-williams-a0384982" target= "_blank" class="footer__social--link
+                    link__hover-effect
+                    footer-link__hover--effect--black">LinkedIn</a>
+                
+                    <a href="https://github.com/BAW-CO" target= "_blank" class="footer__social--link
+                    link__hover-effect
+                    footer-link__hover--effect--black">GitHub</a>
+                
+                    <a href="mailto:bridgetw.designs@gmail.com" target= "_blank" class="footer__social--link
+                    link__hover-effect
+                    footer-link__hover--effect--black">Email</a>
+                
+                    <a href="./assets/Bridget Williams resume.pdf" target="_blank" class="footer__social--link
+                    link__hover-effect
+                    footer-link__hover--effect--black">Resumé</a>
+                </div>
+                <div class="footer__copyright">Copyright © 2024 Bridget Williams</div>
+            </div>
+        </div>
+    </footer>
+    
+</body>
+</html>
